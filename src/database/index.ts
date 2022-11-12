@@ -1,8 +1,12 @@
+import { User } from './../entities/User';
 import { DataSource } from "typeorm"
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "./src/database/db.sqlite",
+    entities: [
+        User
+    ],
     migrations: [
     "./src/database/migrations/*.ts"
   ],

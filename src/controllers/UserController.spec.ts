@@ -32,7 +32,7 @@ describe('UserController', () => {
     
     userController.createUser(mockRequest, mockResponse)
     expect(mockResponse.state.status).toBe(400)
-    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Name, email e password obrigatórios' })
+    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Todos os campos são obrigatórios' })
   })
 
   it('Deve retornar erro caso o usuário não informe o name', () => {
@@ -46,7 +46,7 @@ describe('UserController', () => {
 
     userController.createUser(mockRequest, mockResponse)
     expect(mockResponse.state.status).toBe(400)
-    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Name, email e password obrigatórios' })
+    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Todos os campos são obrigatórios' })
   })
 
   it('Deve retornar erro caso o usuário não informe o email', () => {
@@ -74,7 +74,7 @@ describe('UserController', () => {
 
     userController.createUser(mockRequest, mockResponse)
     expect(mockResponse.state.status).toBe(400)
-    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Name, email e password obrigatórios' })
+    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Todos os campos são obrigatórios' })
   })
 
   it('Deve retornar a mensagem de usuário deletado', () => {

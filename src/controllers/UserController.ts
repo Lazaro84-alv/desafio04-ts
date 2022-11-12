@@ -15,7 +15,7 @@ export class UserController {
       const user = request.body
 
       if(!user.name || user.email || !user.password){
-        return response.status(400).json({ message: 'Bad request! Name, email e password obrigatórios' })
+        return response.status(400).json({ message: 'Bad request! Todos os campos são obrigatórios' })
       }
 
       this.userService.createUser(user.name, user.email, user.password)
