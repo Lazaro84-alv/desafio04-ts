@@ -1,6 +1,7 @@
 import { UserRepository } from "../repositories/UserRepository";
 import { AppDataSource } from "../database"
 import { User } from "../entities/User";
+import { Timestamp } from "typeorm";
 
 export class UserService {
   private userRepository: UserRepository;
@@ -18,5 +19,15 @@ export class UserService {
 
   getUser = async (userId: string): Promise<User | null> => {
     return this.userRepository.getUser(userId)
+  }
+
+  getAuthenticatedUser = async (email: string, password: string): Promise<User | null> => {
+    return this.userRepository.getUserByEmailAndPassword(email, password)
+  }
+
+  getToken = async (email: string, password: string) => {
+    const user = await this.getAuthenticatedUser(email, password)
+
+    return user?.id_user
   }
 }
