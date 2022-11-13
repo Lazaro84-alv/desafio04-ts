@@ -1,11 +1,12 @@
+import { UserRepository } from "../repositories/UserRepository";
+import { AppDataSource } from "../database"
 import { User } from "../entities/User";
-import { AppDataSource } from "./../database/index";
-import { UserRepository } from "./../repositories/UserRepository";
-export class UserService {   
+
+export class UserService {
   private userRepository: UserRepository;
 
   constructor(
-    userRepository = new UserRepository(AppDataSource.manager), 
+    userRepository = new UserRepository(AppDataSource.manager),
   ){
     this.userRepository = userRepository;
   }
@@ -15,7 +16,7 @@ export class UserService {
     return this.userRepository.createUser(user)
   }
 
-  getUser = () => {
-
+  getUser = async (userId: string): Promise<User | null> => {
+    return this.userRepository.getUser(userId)
   }
 }

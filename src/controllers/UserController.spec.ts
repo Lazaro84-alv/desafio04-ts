@@ -31,8 +31,8 @@ describe('UserController', () => {
     } as Request
     
     userController.createUser(mockRequest, mockResponse)
-    expect(mockResponse.state.status).toBe(400)
-    expect(mockResponse.state.json).toMatchObject({ message: 'Bad request! Todos os campos são obrigatórios' })
+    expect(mockResponse.state.status).toBe(201)
+    expect(mockResponse.state.json).toMatchObject({ message: 'Usuário criado' })
   })
 
   it('Deve retornar erro caso o usuário não informe o name', () => {
@@ -59,8 +59,8 @@ describe('UserController', () => {
     } as Request
 
     userController.createUser(mockRequest, mockResponse)
-    expect(mockResponse.state.status).toBe(201)
-    expect(mockResponse.state.json).toMatchObject({ message: "Usuário criado" })
+    expect(mockResponse.state.status).toBe(400)
+    expect(mockResponse.state.json).toMatchObject({ message: "Bad request! Todos os campos são obrigatórios" })
   })
 
   it('Deve retornar erro caso o usuário não informe o password', () => {
