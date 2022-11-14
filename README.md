@@ -33,6 +33,10 @@ Verificar se a função getAllusers está sendo chamada
 [ ] Implementa uma validação para o campo email
 
 O usuário nâo pode ser criado caso não informe o email
+
+<img width="1194" alt="Captura de Tela 2022-11-13 às 07 39 37" src="https://user-images.githubusercontent.com/75143575/201554292-e4a6da11-a295-4017-b73b-5432fbd07fd1.png">
+
+
 Escreva o teste unitário
 
 [ ] Refatorar e implementar a rota para deletar o usuário
